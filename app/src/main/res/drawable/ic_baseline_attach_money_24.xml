@@ -1,0 +1,10 @@
+<!-- res/drawable/ic_baseline_attach_money_24.xml -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="#757575"
+        android:pathData="M12,1C6.48,1 2,5.48 2,11s4.48,10 10,10 10,-4.48 10,-10S17.52,1 12,1zM12,20c-4.96,0 -9,-4.04 -9,-9 0,-4.96 4.04,-9 9,-9s9,4.04 9,9c0,4.96 -4.04,9 -9,9zm-0.5,-12h1.5c1.1,0 2.17,0.32 2.5,1.5h-4.25C11.25,9 10.5,9.75 10.5,10.5c0,0.68 0.51,1.16 1.17,1.22 1.03,0.1 2.07,0.42 2.08,1.55 0,1.1 -0.92,1.58 -1.75,1.75h-1.25v1.5h2.75V18h-3.25C11.25,18 10.5,17.25 10.5,16.5v-1.75C9.25,14.5 9.5,14 9.5,13.5 9.5,12.76 10.25,12 11,11.85c0.82,-0.2 1.5,-0.5 1.5,-1.35 0,-0.83 -0.67,-1.5 -1.5,-1.5h-1.25V7.25H12v1.25h0.25v1z"/>
+</vector>

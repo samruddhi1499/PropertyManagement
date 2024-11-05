@@ -1,0 +1,10 @@
+<!-- res/drawable/ic_baseline_person_24.xml -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="#757575"
+        android:pathData="M12,12c2.7,0 4.99,-2.3 4.99,-5S14.7,2 12,2 7.01,4.3 7.01,7 9.3,12 12,12zM12,14c-3.3,0 -8,1.68 -8,5v3h16v-3c0,-3.32 -4.7,-5 -8,-5z"/>
+</vector>

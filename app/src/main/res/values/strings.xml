@@ -2,4 +2,22 @@
     <string name="app_name">ProjectManagementSystem</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Tenant1Address">
+\n 05 51 John Road</string>
+    <string name="Tenant1">
+\n 10-01-2023 to 10-01-2024</string>
+    <string name="Tenant1Rent">
+\n 500</string>
+    <string name="Tenant2Address">
+\n 05 51 John Road</string>
+    <string name="Tenant2">
+\n 10-01-2023 to 10-01-2024</string>
+    <string name="Tenant2Rent">
+\n 500</string>
+    <string name="Tenant3Address">
+\n 05 51 John Road</string>
+    <string name="Tenant3">
+\n 10-01-2023 to 10-01-2024</string>
+    <string name="Tenant3Rent">
+\n 500</string>
 </resources>

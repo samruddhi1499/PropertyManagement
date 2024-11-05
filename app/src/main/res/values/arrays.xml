@@ -1,0 +1,9 @@
+<!-- res/values/arrays.xml -->
+<resources>
+    <string-array name="payment_methods">
+        <item>Credit Card</item>
+        <item>Bank Transfer</item>
+        <item>Cash</item>
+        <item>Online Payment</item>
+    </string-array>
+</resources>
