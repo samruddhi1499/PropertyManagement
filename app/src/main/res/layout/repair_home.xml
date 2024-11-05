@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginStart="12dp"
+    android:layout_marginEnd="12dp"
+    android:layout_marginVertical="10dp"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Title Section -->
+        <TextView
+            android:id="@+id/leaseTrackingTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Repair"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/lavender"
+            android:layout_gravity="center"/>
+
+        <!-- Divider -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/purple_200"
+            android:layout_marginVertical="16dp"/>
+
+        <!-- Item 1 -->
+        <RelativeLayout
+            android:id="@+id/relativeLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/listImage1"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/man1"
+                android:scaleType="centerCrop"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:id="@+id/listName1"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@id/listImage1"
+                android:text="John"
+                android:textColor="@color/lavender"
+                android:textSize="20sp"/>
+
+            <TextView
+                android:id="@+id/listMessage1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_below="@id/listName1"
+                android:layout_toEndOf="@id/listImage1"
+                android:text="Electric Socket"
+                android:textSize="16sp"
+                android:textColor="@color/lavender"/>
+
+            <Button
+                android:id="@+id/listApproveButton1"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="25dp"
+                android:layout_alignParentEnd="true"
+                android:text="Approve"
+                android:textSize="16sp"
+                android:backgroundTint="@color/purple_200"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="25dp">
+
+                <Button
+                    android:id="@+id/listApprovedButton1"
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:text="Done"
+                    android:textSize="16sp"
+                    android:backgroundTint="@color/teal_700"
+                    android:visibility="gone"/>
+
+                <ImageButton
+                    android:id="@+id/listScheduleButton1"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="10dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Schedule"
+                    android:src="@drawable/baseline_schedule_24"
+                    android:visibility="gone"/>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <!-- Divider -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/purple_200"
+            android:layout_marginVertical="8dp"/>
+
+        <!-- Item 2 -->
+        <RelativeLayout
+            android:id="@+id/relativeLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/listImage2"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/man2"
+                android:scaleType="centerCrop"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:id="@+id/listName2"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@id/listImage2"
+                android:text="Jane"
+                android:textColor="@color/lavender"
+                android:textSize="20sp"/>
+
+            <TextView
+                android:id="@+id/listMessage2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_below="@id/listName2"
+                android:layout_toEndOf="@id/listImage2"
+                android:text="AC Repair"
+                android:textSize="16sp"
+                android:textColor="@color/lavender"/>
+
+            <Button
+                android:id="@+id/listApproveButton2"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="25dp"
+                android:layout_alignParentEnd="true"
+                android:text="Approve"
+                android:textSize="16sp"
+                android:backgroundTint="@color/purple_200"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="25dp">
+
+                <Button
+                    android:id="@+id/listApprovedButton2"
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:text="Done"
+                    android:textSize="16sp"
+                    android:backgroundTint="@color/teal_700"
+                    android:visibility="gone"/>
+
+                <ImageButton
+                    android:id="@+id/listScheduleButton2"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="10dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Schedule"
+                    android:src="@drawable/baseline_schedule_24"
+                    android:visibility="gone"/>
+            </LinearLayout>
+        </RelativeLayout>
+        <!-- Divider -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/purple_200"
+            android:layout_marginVertical="8dp"/>
+        <RelativeLayout
+            android:id="@+id/relativeLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/listImage3"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/man3"
+                android:scaleType="centerCrop"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:id="@+id/listName3"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@id/listImage3"
+                android:text="Alex"
+                android:textColor="@color/lavender"
+                android:textSize="20sp"/>
+
+            <TextView
+                android:id="@+id/listMessage3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_below="@id/listName3"
+                android:layout_toEndOf="@id/listImage3"
+                android:text="Kitchen Repair"
+                android:textSize="16sp"
+                android:textColor="@color/lavender"/>
+
+            <Button
+                android:id="@+id/listApproveButton3"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="25dp"
+                android:layout_alignParentEnd="true"
+                android:text="Approve"
+                android:textSize="16sp"
+                android:backgroundTint="@color/purple_200"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="25dp">
+
+                <Button
+                    android:id="@+id/listApprovedButton3"
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:text="Done"
+                    android:textSize="16sp"
+                    android:backgroundTint="@color/teal_700"
+                    android:visibility="gone"/>
+
+                <ImageButton
+                    android:id="@+id/listScheduleButton3"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="10dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Schedule"
+                    android:src="@drawable/baseline_schedule_24"
+                    android:visibility="gone"/>
+            </LinearLayout>
+        </RelativeLayout>
+        <!-- Divider -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/purple_200"
+            android:layout_marginVertical="8dp"/>
+        <RelativeLayout
+            android:id="@+id/relativeLayout4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/listImage4"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/woman1"
+                android:scaleType="centerCrop"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:id="@+id/listName4"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@id/listImage4"
+                android:text="Marry"
+                android:textColor="@color/lavender"
+                android:textSize="20sp"/>
+
+            <TextView
+                android:id="@+id/listMessage4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_below="@id/listName4"
+                android:layout_toEndOf="@id/listImage4"
+                android:text="Door Repair"
+                android:textSize="16sp"
+                android:textColor="@color/lavender"/>
+
+            <Button
+                android:id="@+id/listApproveButton4"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="25dp"
+                android:layout_alignParentEnd="true"
+                android:text="Approve"
+                android:textSize="16sp"
+                android:backgroundTint="@color/purple_200"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="25dp">
+
+                <Button
+                    android:id="@+id/listApprovedButton4"
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:text="Done"
+                    android:textSize="16sp"
+                    android:backgroundTint="@color/teal_700"
+                    android:visibility="gone"/>
+
+                <ImageButton
+                    android:id="@+id/listScheduleButton4"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="10dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Schedule"
+                    android:src="@drawable/baseline_schedule_24"
+                    android:visibility="gone"/>
+            </LinearLayout>
+        </RelativeLayout>
+        <!-- Divider -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/purple_200"
+            android:layout_marginVertical="8dp"/>
+        <RelativeLayout
+            android:id="@+id/relativeLayout5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/listImage5"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/woman2"
+                android:scaleType="centerCrop"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:id="@+id/listName5"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@id/listImage5"
+                android:text="Roxie"
+                android:textColor="@color/lavender"
+                android:textSize="20sp"/>
+
+            <TextView
+                android:id="@+id/listMessage5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_below="@id/listName5"
+                android:layout_toEndOf="@id/listImage5"
+                android:text="Floor Repair"
+                android:textSize="16sp"
+                android:textColor="@color/lavender"/>
+
+            <Button
+                android:id="@+id/listApproveButton5"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="25dp"
+                android:layout_alignParentEnd="true"
+                android:text="Approve"
+                android:textSize="16sp"
+                android:backgroundTint="@color/purple_200"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="25dp">
+
+                <Button
+                    android:id="@+id/listApprovedButton5"
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:text="Done"
+                    android:textSize="16sp"
+                    android:backgroundTint="@color/teal_700"
+                    android:visibility="gone"/>
+
+                <ImageButton
+                    android:id="@+id/listScheduleButton5"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="10dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Schedule"
+                    android:src="@drawable/baseline_schedule_24"
+                    android:visibility="gone"/>
+            </LinearLayout>
+        </RelativeLayout>
+        <!-- Divider -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/purple_200"
+            android:layout_marginVertical="8dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginTop="80dp">
+
+            <Button
+                android:id="@+id/goBackButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Go Back To Home"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/purple_500"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
+
+
+
+
+
+
+
+
+
