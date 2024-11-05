@@ -19,6 +19,7 @@
             android:exported="false" />
         <activity android:name=".RepairRequest" />
         <activity android:name=".RepairRequestActivity" />
+        <activity android:name=".RepairHome" />
         <activity android:name=".LeaseTracking"/>
         <activity android:name=".PersonDetailActivity"
             android:exported="true">

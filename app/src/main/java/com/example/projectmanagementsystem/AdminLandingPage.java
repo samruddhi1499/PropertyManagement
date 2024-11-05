@@ -25,6 +25,12 @@ public class AdminLandingPage extends AppCompatActivity {
             Intent intent = new Intent(AdminLandingPage.this, LeaseTracking.class);
             startActivity(intent);
         });
+        // Find the Repair CardView by ID
+        CardView repairCard = findViewById(R.id.docCard);
+        repairCard.setOnClickListener(view -> {
+            Intent intent = new Intent(AdminLandingPage.this, RepairHome.class);
+            startActivity(intent);
+        });
 
     }
 }
