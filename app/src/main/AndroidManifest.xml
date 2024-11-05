@@ -17,6 +17,9 @@
         <activity
             android:name=".AdminLandingPage"
             android:exported="false" />
+        <activity android:name=".RepairRequest" />
+        <activity android:name=".RepairRequestActivity" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
