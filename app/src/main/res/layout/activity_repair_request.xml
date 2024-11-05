@@ -98,6 +98,7 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:id="@+id/mwRepairCard"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
                 app:cardElevation="20dp"
@@ -145,6 +146,7 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:id="@+id/kitchenRepairCard"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
                 app:cardElevation="20dp"
@@ -179,6 +181,7 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:id="@+id/plumbingCard"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
                 app:cardElevation="20dp"
@@ -226,6 +229,7 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:id="@+id/wmRepairCard"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
                 app:cardElevation="20dp"
@@ -260,6 +264,7 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:id="@+id/pestControlCard"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
                 app:cardElevation="20dp"
