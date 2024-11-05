@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Inside activity_request_form.xml -->
+    <TextView
+        android:id="@+id/serviceNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="#A9A9A9"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Work Detail"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:paddingBottom="16dp" />
+
+    <!-- Issue Details Section -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Issue Details"
+        android:textSize="20sp"
+        android:paddingBottom="8dp" />
+
+    <!-- Title Section -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TITLE"
+        android:textSize="20sp"
+        android:textColor="#A9A9A9" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:padding="8dp"
+        android:background="@android:color/transparent"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Description Section -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DESCRIPTION"
+        android:textSize="20sp"
+        android:textColor="#A9A9A9" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:padding="8dp"
+        android:background="@android:color/transparent"
+        android:layout_marginBottom="16dp" />
+
+
+
+    <!-- Submit Button -->
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="400dp"
+        android:padding="12dp" />
+
+</LinearLayout>

@@ -1,0 +1,53 @@
+plugins {
+    id 'com.android.application' // Use the plugin id directly
+}
+
+android {
+    namespace 'com.example.projectmanagementsystem'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.example.projectmanagementsystem"
+        minSdk 28
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+        vectorDrawables.useSupportLibrary = true
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.5.0' // Ensure this points to the latest stable version
+    implementation 'com.google.android.material:material:1.8.0' // Ensure this points to the latest stable version
+    implementation 'androidx.activity:activity-ktx:1.6.0' // Ensure this points to the latest stable version
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4' // Ensure this points to the latest stable version
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation libs.activity// Confirm if this is the latest
+
+
+    // Testing dependencies
+    testImplementation 'junit:junit:4.13.2' // For unit tests
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5' // For Android testing
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1' // For UI testing
+}
+
+configurations.all {
+    resolutionStrategy {
+        force 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22'
+    }
+}
