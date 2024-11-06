@@ -12,20 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjectManagementSystem">
         <activity
-            android:name=".PayRent"
-            android:exported="false" />
-        <activity
-            android:name=".AddNewTenant"
-            android:exported="false" />
-        <activity
-            android:name=".ViewTenantDetails"
-            android:exported="false" />
-        <activity
-            android:name=".TenantViewList"
+            android:name=".Notification"
             android:exported="false" />
         <activity
             android:name=".TenantLandingPage"
             android:exported="false" />
+        <activity android:name=".RentHome"
+            android:exported="true" />
+
+
         <activity
             android:name=".AdminLandingPage"
             android:exported="false" />
