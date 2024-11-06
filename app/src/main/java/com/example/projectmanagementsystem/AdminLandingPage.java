@@ -33,6 +33,13 @@ public class AdminLandingPage extends AppCompatActivity {
         });
 
         // Find the Repair CardView by ID
+        CardView rentCard = findViewById(R.id.videoCard);
+        rentCard.setOnClickListener(view -> {
+            Intent intent = new Intent(AdminLandingPage.this, RentHome.class);
+            startActivity(intent);
+        });
+
+        // Find the Repair CardView by ID
         CardView notificationCard = findViewById(R.id.audioCard);
         notificationCard.setOnClickListener(view -> {
             Intent intent = new Intent(AdminLandingPage.this, Notification.class);
