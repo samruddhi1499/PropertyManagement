@@ -32,5 +32,12 @@ public class AdminLandingPage extends AppCompatActivity {
             startActivity(intent);
         });
 
+        // Find the Repair CardView by ID
+        CardView notificationCard = findViewById(R.id.audioCard);
+        notificationCard.setOnClickListener(view -> {
+            Intent intent = new Intent(AdminLandingPage.this, Notification.class);
+            startActivity(intent);
+        });
+
     }
 }

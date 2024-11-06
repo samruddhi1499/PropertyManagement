@@ -27,5 +27,16 @@ public class TenantLandingPage extends AppCompatActivity {
             Intent intent = new Intent(TenantLandingPage.this, RepairRequest.class);
             startActivity(intent);
         });
+
+        CardView tenantNotification = findViewById(R.id.tenantNotification);
+
+        // Set the OnClickListener
+        tenantNotification.setOnClickListener(view -> {
+            // Start RepairRequest activity
+            Intent intent = new Intent(TenantLandingPage.this, Notification.class);
+            startActivity(intent);
+        });
+
+
     }
 }
