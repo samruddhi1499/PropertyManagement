@@ -22,7 +22,7 @@ public class LoginTabFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_login_tab, container, false);
         username = view.findViewById(R.id.login_email);
 
-        // Find the button and set the onClick listener
+        // Find the button and set the onClick listenerview.findViewById(R.id.login_button);
         Button loginButton = view.findViewById(R.id.login_button);
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
