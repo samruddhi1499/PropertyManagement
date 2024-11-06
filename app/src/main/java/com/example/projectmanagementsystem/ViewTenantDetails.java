@@ -1,5 +1,6 @@
 package com.example.projectmanagementsystem;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
@@ -8,17 +9,25 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class ViewTenantDetails extends AppCompatActivity {
+import com.example.projectmanagementsystem.databinding.ActivityViewTenantDetailsBinding;
 
+public class ViewTenantDetails extends AppCompatActivity {
+    ActivityViewTenantDetailsBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_view_tenant_details);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+        Intent intent = this.getIntent();
+        if (intent != null){
+            String name = intent.getStringExtra("name");
+            int address = intent.getIntExtra("address", R.string.Tenant1Address);
+            int duration = intent.getIntExtra("duration", R.string.Tenant1);
+            int rent = intent.getIntExtra("rent", R.string.Tenant1Rent);
+            binding.detailName.setText(name);
+            binding.detailAddress.setText(address);
+            binding.detailDuration.setText(duration);
+            binding.detailRent.setText(rent);
+        }
     }
 }

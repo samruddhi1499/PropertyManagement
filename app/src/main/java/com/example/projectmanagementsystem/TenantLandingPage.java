@@ -16,7 +16,14 @@ public class TenantLandingPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tenant_landing_page);
+        CardView payTenantRent = findViewById(R.id.tenantPayRent);
 
+        // Set the OnClickListener
+        payTenantRent.setOnClickListener(view -> {
+            // Start RepairRequest activity
+            Intent intent = new Intent(TenantLandingPage.this, PayRent.class);
+            startActivity(intent);
+        });
 
         // Find the CardView by ID
         CardView tenantRepairCard = findViewById(R.id.tenantRepair);
@@ -36,7 +43,6 @@ public class TenantLandingPage extends AppCompatActivity {
             Intent intent = new Intent(TenantLandingPage.this, Notification.class);
             startActivity(intent);
         });
-
 
     }
 }
