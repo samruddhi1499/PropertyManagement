@@ -5,9 +5,6 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class AdminLandingPage extends AppCompatActivity {
 
@@ -17,20 +14,28 @@ public class AdminLandingPage extends AppCompatActivity {
 
         setContentView(R.layout.activity_admin_landing_page);
 
-        // Find the CardView by ID
+        // Find the CardView by ID for Lease Tracking
         CardView leaseCard = findViewById(R.id.downloadCard);
-
-        // Set the OnClickListener
         leaseCard.setOnClickListener(view -> {
+            // Launch the LeaseTracking Activity
             Intent intent = new Intent(AdminLandingPage.this, LeaseTracking.class);
             startActivity(intent);
         });
-        // Find the Repair CardView by ID
+
+        // Find the CardView by ID for Repair Home
         CardView repairCard = findViewById(R.id.docCard);
         repairCard.setOnClickListener(view -> {
+            // Launch the RepairHome Activity
             Intent intent = new Intent(AdminLandingPage.this, RepairHome.class);
             startActivity(intent);
         });
 
+        // Find the CardView by ID for Rent (videoCard)
+        CardView rentCard = findViewById(R.id.videoCard);  // "Rent" card
+        rentCard.setOnClickListener(view -> {
+            // Launch the Rent Activity (you need to create this activity)
+            Intent intent = new Intent(AdminLandingPage.this, RentHome.class); // Replace RentActivity with actual activity name
+            startActivity(intent);
+        });
     }
 }
