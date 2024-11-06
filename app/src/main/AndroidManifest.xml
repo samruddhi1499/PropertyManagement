@@ -17,6 +17,10 @@
         <activity
             android:name=".TenantLandingPage"
             android:exported="false" />
+        <activity android:name=".RentHome"
+            android:exported="true" />
+
+
         <activity
             android:name=".AdminLandingPage"
             android:exported="false" />
