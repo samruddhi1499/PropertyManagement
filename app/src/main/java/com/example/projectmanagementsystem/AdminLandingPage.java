@@ -2,7 +2,6 @@ package com.example.projectmanagementsystem;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -17,16 +16,21 @@ public class AdminLandingPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_admin_landing_page);
-        CardView imageCard = findViewById(R.id.imageCard);
 
-        // Set click listener for the imageCard
-        imageCard.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Start TenantListActivity
-                Intent intent = new Intent(AdminLandingPage.this, TenantList.class);
-                startActivity(intent);
-            }
+        // Find the CardView by ID
+        CardView leaseCard = findViewById(R.id.downloadCard);
+
+        // Set the OnClickListener
+        leaseCard.setOnClickListener(view -> {
+            Intent intent = new Intent(AdminLandingPage.this, LeaseTracking.class);
+            startActivity(intent);
         });
+        // Find the Repair CardView by ID
+        CardView repairCard = findViewById(R.id.docCard);
+        repairCard.setOnClickListener(view -> {
+            Intent intent = new Intent(AdminLandingPage.this, RepairHome.class);
+            startActivity(intent);
+        });
+
     }
 }
