@@ -83,9 +83,9 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="350dp"
+        android:padding="12dp"
         android:text="Submit"
-        android:textColor="@android:color/white"
-        android:layout_marginTop="400dp"
-        android:padding="12dp" />
+        android:textColor="@android:color/white" />
 
 </LinearLayout>
