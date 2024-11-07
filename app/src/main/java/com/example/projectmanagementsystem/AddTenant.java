@@ -8,11 +8,12 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class PayRent extends AppCompatActivity {
+public class AddTenant extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pay_rent);
+        setContentView(R.layout.activity_add_tenant);
+
     }
 }

@@ -48,7 +48,7 @@ public class AdminLandingPage extends AppCompatActivity {
 
         CardView tenantList = findViewById(R.id.imageCard);
         tenantList.setOnClickListener(view -> {
-            Intent intent = new Intent(AdminLandingPage.this, TenantViewList.class);
+            Intent intent = new Intent(AdminLandingPage.this, ListTenantByAdmin.class);
             startActivity(intent);
         });
 

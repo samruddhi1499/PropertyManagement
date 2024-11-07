@@ -21,7 +21,7 @@ public class TenantLandingPage extends AppCompatActivity {
         // Set the OnClickListener
         payTenantRent.setOnClickListener(view -> {
             // Start RepairRequest activity
-            Intent intent = new Intent(TenantLandingPage.this, PayRent.class);
+            Intent intent = new Intent(TenantLandingPage.this, TenantPayment.class);
             startActivity(intent);
         });
 

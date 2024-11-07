@@ -9,16 +9,16 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.example.projectmanagementsystem.databinding.ActivityViewTenantDetailsBinding;
+import com.example.projectmanagementsystem.databinding.ActivityListTenantByAdminBinding;
+import com.example.projectmanagementsystem.databinding.ActivityTenantDetailsBinding;
 
-public class ViewTenantDetails extends AppCompatActivity {
-    ActivityViewTenantDetailsBinding binding;
+public class TenantDetails extends AppCompatActivity {
+    ActivityTenantDetailsBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_view_tenant_details);
-        Intent intent = this.getIntent();
+        binding = ActivityTenantDetailsBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());        Intent intent = this.getIntent();
         if (intent != null){
             String name = intent.getStringExtra("name");
             int address = intent.getIntExtra("address", R.string.Tenant1Address);
