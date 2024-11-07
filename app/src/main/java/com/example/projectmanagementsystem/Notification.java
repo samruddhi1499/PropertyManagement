@@ -1,10 +1,13 @@
 package com.example.projectmanagementsystem;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.projectmanagementsystem.databinding.ActivityNotificationBinding;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
@@ -14,6 +17,8 @@ public class Notification extends AppCompatActivity {
     NotificationAdapter listAdapter;
     ArrayList<NotificationData> dataArrayList = new ArrayList<>();
     NotificationData listData;
+
+    FloatingActionButton fab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +36,13 @@ public class Notification extends AppCompatActivity {
 
         listAdapter = new NotificationAdapter(Notification.this, dataArrayList);
         binding.notificationView.setAdapter(listAdapter);
+
+
+        fab = findViewById(R.id.fab);
+        fab.setOnClickListener(view -> {
+            Intent intent = new Intent(Notification.this, RepairHome.class);
+            startActivity(intent);
+        });
 
     }
 }

@@ -31,7 +31,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@color/purple_200"
+            android:background="@color/lavender"
             android:layout_marginVertical="16dp"/>
 
         <!-- Item 1 -->
@@ -81,7 +81,7 @@
                 android:layout_alignParentEnd="true"
                 android:text="Not Paid"
                 android:textSize="16sp"
-                android:backgroundTint="@color/purple_200"/>
+                android:backgroundTint="@color/lavender"/>
 
 
         </RelativeLayout>
@@ -140,14 +140,14 @@
                 android:layout_alignParentEnd="true"
                 android:text="Not Paid"
                 android:textSize="16sp"
-                android:backgroundTint="@color/purple_200"/>
+                android:backgroundTint="@color/lavender"/>
 
         </RelativeLayout>
         <!-- Divider -->
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@color/purple_200"
+            android:background="@color/lavender"
             android:layout_marginVertical="8dp"/>
         <RelativeLayout
             android:id="@+id/relativeLayout3"
@@ -195,14 +195,14 @@
                 android:layout_alignParentEnd="true"
                 android:text="Not Paid"
                 android:textSize="16sp"
-                android:backgroundTint="@color/purple_200"/>
+                android:backgroundTint="@color/lavender"/>
 
         </RelativeLayout>
         <!-- Divider -->
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@color/purple_200"
+            android:background="@color/lavender"
             android:layout_marginVertical="8dp"/>
         <RelativeLayout
             android:id="@+id/relativeLayout4"
@@ -250,7 +250,7 @@
                 android:layout_alignParentEnd="true"
                 android:text="Not Paid"
                 android:textSize="16sp"
-                android:backgroundTint="@color/purple_200"/>
+                android:backgroundTint="@color/lavender"/>
 
 
         </RelativeLayout>
@@ -258,7 +258,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@color/purple_200"
+            android:background="@color/lavender"
             android:layout_marginVertical="8dp"/>
         <RelativeLayout
             android:id="@+id/relativeLayout5"
@@ -306,14 +306,14 @@
                 android:layout_alignParentEnd="true"
                 android:text="Not Paid"
                 android:textSize="16sp"
-                android:backgroundTint="@color/purple_200"/>
+                android:backgroundTint="@color/lavender"/>
 
         </RelativeLayout>
         <!-- Divider -->
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@color/purple_200"
+            android:background="@color/lavender"
             android:layout_marginVertical="8dp"/>
 
         <LinearLayout
@@ -330,7 +330,7 @@
                 android:text="Go Back To Home"
                 android:textSize="16sp"
                 android:textColor="@color/white"
-                android:backgroundTint="@color/purple_200"
+                android:backgroundTint="@color/lavender"
                 android:layout_gravity="center"/>
 
         </LinearLayout>

@@ -29,5 +29,14 @@
         android:divider="@android:color/transparent"
         android:dividerHeight="10.0sp"
         />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_alignParentBottom = "true"
+        android:layout_alignParentRight = "true"
+        android:layout_margin = "16dp"
+        android:src = "@drawable/baseline_add_24" />
+
 
 </LinearLayout>

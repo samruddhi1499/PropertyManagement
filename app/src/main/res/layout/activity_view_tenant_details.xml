@@ -8,18 +8,6 @@
     android:orientation="vertical"
     tools:context=".ViewTenantDetails">
 
-    <TextView
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:id="@+id/title"
-        android:text="Admin"
-        android:textColor="@color/lavender"
-        android:textSize="28sp"
-        android:layout_marginTop="42dp"
-        android:background="@drawable/lavender_border"
-        android:gravity="center"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:layout_width="wrap_content"

@@ -24,7 +24,7 @@ public class ListTenantByAdmin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityListTenantByAdminBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-            int[] imageList = {R.drawable.user, R.drawable.user, R.drawable.user};
+            int[] imageList = {R.drawable.man1, R.drawable.man2, R.drawable.man3};
             int[] addressList = {R.string.Tenant1Address, R.string.Tenant2Address,R.string.Tenant3Address};
             int[] durationList = {R.string.Tenant1, R.string.Tenant2, R.string.Tenant3};
             int[] rent = {R.string.Tenant1Rent, R.string.Tenant2Rent, R.string.Tenant3Rent};

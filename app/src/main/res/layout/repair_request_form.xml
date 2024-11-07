@@ -18,18 +18,28 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Work Detail"
+        android:text="Issue Details"
         android:textSize="18sp"
         android:gravity="center"
         android:paddingBottom="16dp" />
 
-    <!-- Issue Details Section -->
+
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Issue Details"
+        android:text="Room No."
         android:textSize="20sp"
-        android:paddingBottom="8dp" />
+        android:textColor="#A9A9A9" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:padding="8dp"
+        android:background="@drawable/edittext_border"
+        android:layout_marginBottom="16dp" />
+
 
     <!-- Title Section -->
     <TextView
@@ -44,7 +54,7 @@
         android:layout_height="wrap_content"
         android:textSize="16sp"
         android:padding="8dp"
-        android:background="@android:color/transparent"
+        android:background="@drawable/edittext_border"
         android:layout_marginBottom="16dp" />
 
     <!-- Description Section -->
@@ -56,12 +66,16 @@
         android:textColor="#A9A9A9" />
 
     <EditText
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="16sp"
         android:padding="8dp"
-        android:background="@android:color/transparent"
-        android:layout_marginBottom="16dp" />
+        android:background="@drawable/edittext_border"
+        android:layout_marginBottom="16dp"
+        android:minLines="5"
+        android:gravity="top"
+        android:inputType="textMultiLine" />
 
 
 

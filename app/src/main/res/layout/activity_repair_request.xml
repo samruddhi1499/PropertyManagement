@@ -14,24 +14,24 @@
         android:layout_marginTop="20dp">
 
         <TextView
-            android:layout_width="0dp"
-            android:layout_height="42dp"
             android:id="@+id/repairName"
-            android:text="Repair"
-            android:textSize="40sp"
-            android:textColor="@color/lavender"
+            android:layout_width="244dp"
+            android:layout_height="47dp"
             android:layout_marginStart="18dp"
-            android:layout_marginTop="40dp"
-            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="30dp"
+            android:text="Repair"
+            android:textColor="@color/lavender"
+            android:textSize="35sp"
+            app:layout_constraintEnd_toStartOf="@+id/repairserviceImage"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/repairserviceImage"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/repairDesc"
             android:text="What you need to fixed?"
-            android:textSize="14sp"
+            android:textSize="16sp"
             android:layout_marginStart="18dp"
             android:textColor="@color/lavender"
             app:layout_constraintStart_toStartOf="parent"
@@ -160,7 +160,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/kitchenName"
-                        android:text="Kitchen Repair &amp; installation"
+                        android:text="Kitchen Repair"
                         android:textSize="20sp"
                         android:textColor="@color/lavender"
                         android:layout_marginTop="10dp"
@@ -240,15 +240,15 @@
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/machineName"
                         android:text="Washing Machine Repair"
                         android:textSize="20sp"
                         android:textColor="@color/lavender"
-                        android:layout_marginTop="10dp"
                         android:layout_centerHorizontal="true"
-                        android:layout_below="@+id/washingmachineImage"/>
+                        android:layout_below="@+id/washingmachineImage"
+                        android:gravity="center" /> <!-- Center the text within the TextView -->
 
                     <ImageView
                         android:layout_width="70dp"

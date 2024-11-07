@@ -9,12 +9,12 @@
 
     <TextView
         android:id="@+id/title"
-        android:layout_width="150dp"
+        android:layout_width="170dp"
         android:layout_height="50dp"
         android:layout_marginTop="42dp"
         android:background="@drawable/lavender_border"
         android:gravity="center"
-        android:text="Admin"
+        android:text="Tenant List"
         android:textColor="@color/lavender"
         android:textSize="28sp"
         app:layout_constraintStart_toStartOf="parent"

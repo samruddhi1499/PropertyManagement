@@ -65,9 +65,9 @@
 
             <TextView
                 android:id="@+id/listTime1"
-                android:layout_width="80dp"
-                android:layout_height="30dp"
-                android:layout_marginStart="100dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="90dp"
                 android:layout_marginTop="25dp"
                 android:layout_toEndOf="@id/listName1"
                 android:text="5 days"
@@ -111,9 +111,9 @@
 
             <TextView
                 android:id="@+id/listTime2"
-                android:layout_width="80dp"
-                android:layout_height="30dp"
-                android:layout_marginStart="100dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="90dp"
                 android:layout_marginTop="25dp"
                 android:layout_toEndOf="@id/listName2"
                 android:text="3 days"
@@ -157,9 +157,9 @@
 
             <TextView
                 android:id="@+id/listTime3"
-                android:layout_width="80dp"
-                android:layout_height="30dp"
-                android:layout_marginStart="100dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="90dp"
                 android:layout_marginTop="25dp"
                 android:layout_toEndOf="@id/listName3"
                 android:text="10 days"
@@ -204,9 +204,9 @@
 
             <TextView
                 android:id="@+id/listTime4"
-                android:layout_width="80dp"
-                android:layout_height="30dp"
-                android:layout_marginStart="100dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="90dp"
                 android:layout_marginTop="25dp"
                 android:layout_toEndOf="@id/listName4"
                 android:text="2 days"
@@ -250,9 +250,9 @@
 
             <TextView
                 android:id="@+id/listTime5"
-                android:layout_width="80dp"
-                android:layout_height="30dp"
-                android:layout_marginStart="100dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="90dp"
                 android:layout_marginTop="25dp"
                 android:layout_toEndOf="@id/listName5"
                 android:text="7 days"
