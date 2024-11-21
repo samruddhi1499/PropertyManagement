@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjectManagementSystem">
         <activity
+            android:name=".ProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".AddTenant"
             android:exported="false" />
         <activity
@@ -29,9 +32,10 @@
         <activity
             android:name=".TenantLandingPage"
             android:exported="false" />
-        <activity
-            android:name=".RentHome"
+        <activity android:name=".RentHome"
             android:exported="true" />
+
+
         <activity
             android:name=".AdminLandingPage"
             android:exported="false" />
