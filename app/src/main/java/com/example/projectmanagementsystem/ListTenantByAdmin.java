@@ -46,6 +46,7 @@ public class ListTenantByAdmin extends AppCompatActivity {
 
             // Pass tenant details to TenantDetails activity
             Intent intent = new Intent(ListTenantByAdmin.this, TenantDetails.class);
+            intent.putExtra("tenantId", selectedTenant.getId()); // Pass tenantId
             intent.putExtra("name", selectedTenant.getName());
             intent.putExtra("address", selectedTenant.getAddress());
             intent.putExtra("duration", selectedTenant.getDuration());
@@ -69,10 +70,18 @@ public class ListTenantByAdmin extends AppCompatActivity {
                 tenantList.clear();
 
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                    // Get the tenantId (Firebase key)
+                    String tenantId = dataSnapshot.getKey();
+
                     // Convert snapshot to TenantHelper object
                     TenantHelper tenant = dataSnapshot.getValue(TenantHelper.class);
-                    if (tenant != null) {
-                        tenantList.add(tenant); // Add TenantHelper to the list
+
+                    if (tenant != null && tenantId != null) {
+                        // Set the tenantId in the TenantHelper object
+                        tenant.setId(tenantId);
+
+                        // Add TenantHelper to the list
+                        tenantList.add(tenant);
                     }
                 }
 
@@ -82,8 +91,10 @@ public class ListTenantByAdmin extends AppCompatActivity {
 
             @Override
             public void onCancelled(DatabaseError error) {
+                // Handle database error
                 Toast.makeText(ListTenantByAdmin.this, "Failed to fetch tenants: " + error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
-    }
+
+}
 }

@@ -6,6 +6,8 @@ public class TenantHelper {
     private String address; // Address as String
     private int duration;
     private int rent;
+    private String id;
+
     private String phone; // Added phone field
 
     // Constructor with all parameters
@@ -29,6 +31,15 @@ public class TenantHelper {
     public void setName(String name) {
         this.name = name;
     }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
 
     public String getAddress() {
         return address;

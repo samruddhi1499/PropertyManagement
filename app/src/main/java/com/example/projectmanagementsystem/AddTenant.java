@@ -1,5 +1,6 @@
 package com.example.projectmanagementsystem;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -75,6 +76,9 @@ public class AddTenant extends AppCompatActivity {
                         leaseDuration.setText("");
                         address.setText("");
                         rent.setText("");
+                        Intent intent = new Intent(AddTenant.this, ListTenantByAdmin.class);
+                        startActivity(intent);
+                        finish();
                     } else {
                         Toast.makeText(this, "Failed to add tenant. Please try again.", Toast.LENGTH_SHORT).show();
                     }
