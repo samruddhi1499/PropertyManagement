@@ -3,64 +3,87 @@ package com.example.projectmanagementsystem;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.Button;
-import android.widget.ListView;
+import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.projectmanagementsystem.databinding.ActivityListTenantByAdminBinding;
-import com.example.projectmanagementsystem.databinding.ActivityNotificationBinding;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
 public class ListTenantByAdmin extends AppCompatActivity {
-    ActivityListTenantByAdminBinding binding;
-    ListAdapter listAdapter;
-    ArrayList<ListData> dataArrayList = new ArrayList<>();
-    ListData listData;
+
+    private ActivityListTenantByAdminBinding binding;
+    private ListAdapter listAdapter;
+    private final ArrayList<TenantHelper> tenantList = new ArrayList<>();
+    private DatabaseReference databaseReference;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityListTenantByAdminBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-            int[] imageList = {R.drawable.man1, R.drawable.man2, R.drawable.man3};
-            int[] addressList = {R.string.Tenant1Address, R.string.Tenant2Address,R.string.Tenant3Address};
-            int[] durationList = {R.string.Tenant1, R.string.Tenant2, R.string.Tenant3};
-            int[] rent = {R.string.Tenant1Rent, R.string.Tenant2Rent, R.string.Tenant3Rent};
-            String[] nameList = {"Max", "Jess", "Carter"};
-            for (int i = 0; i < imageList.length; i++){
-                listData = new ListData(nameList[i], addressList[i], durationList[i], rent[i], imageList[i]);
-                dataArrayList.add(listData);
-            }
-            listAdapter = new ListAdapter(ListTenantByAdmin.this, dataArrayList);
-            binding.listview.setAdapter(listAdapter);
-            binding.listview.setClickable(true);
-            binding.listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                    Intent intent = new Intent(ListTenantByAdmin.this, TenantDetails.class);
-                    intent.putExtra("name", nameList[i]);
-                    intent.putExtra("address", addressList[i]);
-                    intent.putExtra("duration", durationList[i]);
-                    intent.putExtra("rent", rent[i]);
-                    startActivity(intent);
-                }
-            });
 
-            Button addTenant = findViewById(R.id.addTenantButton);
-            addTenant.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    AddTenantForm(view);
-                }
-            });
-        }
+        // Initialize Firebase reference
+        databaseReference = FirebaseDatabase.getInstance().getReference("tenants");
 
-        public void AddTenantForm(View view) {
-            Intent intent = new Intent(ListTenantByAdmin.this, AddTenant.class);
+        // Initialize adapter and set it to the ListView
+        listAdapter = new ListAdapter(this, tenantList);
+        binding.listview.setAdapter(listAdapter);
 
+        // Fetch tenants from Firebase
+        fetchTenantsFromFirebase();
+
+        // Handle list item clicks
+        binding.listview.setOnItemClickListener((adapterView, view, position, id) -> {
+            // Get clicked tenant data
+            TenantHelper selectedTenant = tenantList.get(position);
+
+            // Pass tenant details to TenantDetails activity
+            Intent intent = new Intent(ListTenantByAdmin.this, TenantDetails.class);
+            intent.putExtra("name", selectedTenant.getName());
+            intent.putExtra("address", selectedTenant.getAddress());
+            intent.putExtra("duration", selectedTenant.getDuration());
+            intent.putExtra("rent", selectedTenant.getRent());
+            intent.putExtra("phone", selectedTenant.getPhone()); // Include phone
             startActivity(intent);
-        }
+        });
 
+        // Add Tenant button
+        binding.addTenantButton.setOnClickListener(view -> {
+            Intent intent = new Intent(ListTenantByAdmin.this, AddTenant.class);
+            startActivity(intent);
+        });
+    }
+
+    private void fetchTenantsFromFirebase() {
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+                // Clear the list to avoid duplicates
+                tenantList.clear();
+
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                    // Convert snapshot to TenantHelper object
+                    TenantHelper tenant = dataSnapshot.getValue(TenantHelper.class);
+                    if (tenant != null) {
+                        tenantList.add(tenant); // Add TenantHelper to the list
+                    }
+                }
+
+                // Notify adapter of data changes
+                listAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                Toast.makeText(ListTenantByAdmin.this, "Failed to fetch tenants: " + error.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
 }

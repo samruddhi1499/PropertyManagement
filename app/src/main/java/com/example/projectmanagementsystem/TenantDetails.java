@@ -3,31 +3,33 @@ package com.example.projectmanagementsystem;
 import android.content.Intent;
 import android.os.Bundle;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
-import com.example.projectmanagementsystem.databinding.ActivityListTenantByAdminBinding;
 import com.example.projectmanagementsystem.databinding.ActivityTenantDetailsBinding;
 
 public class TenantDetails extends AppCompatActivity {
+
     ActivityTenantDetailsBinding binding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityTenantDetailsBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());        Intent intent = this.getIntent();
-        if (intent != null){
+        setContentView(binding.getRoot());
+
+        // Get data from the Intent
+        Intent intent = this.getIntent();
+        if (intent != null) {
             String name = intent.getStringExtra("name");
-            int address = intent.getIntExtra("address", R.string.Tenant1Address);
-            int duration = intent.getIntExtra("duration", R.string.Tenant1);
-            int rent = intent.getIntExtra("rent", R.string.Tenant1Rent);
-            binding.detailName.setText(name);
-            binding.detailAddress.setText(address);
-            binding.detailDuration.setText(duration);
-            binding.detailRent.setText(rent);
+            String address = intent.getStringExtra("address");
+            int duration = intent.getIntExtra("duration", 0); // Default value is 0 if not passed
+            int rent = intent.getIntExtra("rent", 0); // Default value is 0 if not passed
+
+            // Update UI with the data
+            if (name != null) binding.detailName.setText(name);
+            if (address != null) binding.detailAddress.setText(address);
+            binding.detailDuration.setText(String.format("%d months", duration)); // Example: "12 months"
+            binding.detailRent.setText(String.format("$%d", rent)); // Example: "$1200"
         }
     }
 }
