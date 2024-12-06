@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="12dp"
+    android:layout_marginEnd="12dp"
+    android:layout_marginVertical="10dp"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:gravity="center_vertical">
+
+        <!-- Profile Image -->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/listImage"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/man1"
+            android:scaleType="centerCrop"
+            android:layout_marginEnd="16dp"/>
+
+        <!-- Name and Room Section -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/listName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="John"
+                android:textColor="@color/lavender"
+                android:textSize="20sp"/>
+
+            <TextView
+                android:id="@+id/listRoomNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Room 101"
+                android:textColor="@color/lavender"
+                android:textSize="16sp"/>
+        </LinearLayout>
+
+        <!-- Lease Expiry Information -->
+        <TextView
+            android:id="@+id/listExpiry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5 days"
+            android:textColor="@color/lavender"
+            android:textSize="16sp"
+            android:layout_marginStart="16dp"
+            android:gravity="end"
+            android:paddingEnd="16dp"
+            android:ellipsize="end"
+            android:maxLines="1" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
