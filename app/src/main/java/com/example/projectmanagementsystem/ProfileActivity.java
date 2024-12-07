@@ -33,6 +33,4 @@ public class ProfileActivity extends AppCompatActivity {
         profilePassword.setText(passwordUser);
     }
 
-
-
 }

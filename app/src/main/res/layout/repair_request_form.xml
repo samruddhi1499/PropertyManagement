@@ -6,15 +6,16 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <!-- Inside activity_request_form.xml -->
+    <!-- Service Name -->
     <TextView
         android:id="@+id/serviceNameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="16sp"
         android:textColor="#A9A9A9"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginBottom="16dp" />
 
+    <!-- Title for Issue Details -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -23,8 +24,7 @@
         android:gravity="center"
         android:paddingBottom="16dp" />
 
-
-
+    <!-- Room No Section -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -33,13 +33,13 @@
         android:textColor="#A9A9A9" />
 
     <EditText
+        android:id="@+id/roomNoEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="16sp"
         android:padding="8dp"
         android:background="@drawable/edittext_border"
         android:layout_marginBottom="16dp" />
-
 
     <!-- Title Section -->
     <TextView
@@ -50,6 +50,7 @@
         android:textColor="#A9A9A9" />
 
     <EditText
+        android:id="@+id/titleEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="16sp"
@@ -66,7 +67,7 @@
         android:textColor="#A9A9A9" />
 
     <EditText
-
+        android:id="@+id/descriptionEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="16sp"
@@ -77,15 +78,13 @@
         android:gravity="top"
         android:inputType="textMultiLine" />
 
-
-
     <!-- Submit Button -->
     <Button
+        android:id="@+id/submitButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="350dp"
         android:padding="12dp"
         android:text="Submit"
         android:textColor="@android:color/white" />
-
 </LinearLayout>

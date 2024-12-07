@@ -2,7 +2,8 @@ package com.example.projectmanagementsystem;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
@@ -11,59 +12,24 @@ public class RepairRequest extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_repair_request); // Main screen layout with cards
+        setContentView(R.layout.activity_repair_request); // Layout with repair list
 
-        // Card view references
-        CardView acRepairCard = findViewById(R.id.acRepairCard);
-        CardView mwRepairCard = findViewById(R.id.mwRepairCard);
-        CardView kitchenRepairCard = findViewById(R.id.kitchenRepairCard);
-        CardView plumbingCard = findViewById(R.id.plumbingCard);
-        CardView wmRepairCard = findViewById(R.id.wmRepairCard);
-        CardView pestControlCard = findViewById(R.id.pestControlCard);
-
-        // Set click listeners on each card
-        acRepairCard.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openRepairRequestPage("AC Repair"); // Pass the service name as needed
-            }
-        });
-        mwRepairCard.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openRepairRequestPage("Microwave Repair"); // Pass the service name as needed
-            }
-        });
-        kitchenRepairCard.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openRepairRequestPage("Kitchen Repair & Installation"); // Pass the service name as needed
-            }
-        });
-        plumbingCard.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openRepairRequestPage("Plumbing"); // Pass the service name as needed
-            }
-        });
-        wmRepairCard.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openRepairRequestPage("Washing Machine Repair"); // Pass the service name as needed
-            }
-        });
-        pestControlCard.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openRepairRequestPage("Pest Control"); // Pass the service name as needed
-            }
-        });
+        // Set up click listeners for each repair type
+        setCardClickListener(R.id.acRepairCard, "AC Repair");
+        setCardClickListener(R.id.mwRepairCard, "Microwave Repair");
+        setCardClickListener(R.id.kitchenRepairCard, "Kitchen Repair");
+        setCardClickListener(R.id.plumbingCard, "Plumbing");
+        setCardClickListener(R.id.wmRepairCard, "Washing Machine Repair");
+        setCardClickListener(R.id.pestControlCard, "Pest Control");
     }
 
-    // Method to open RepairRequestActivity with the service name
-    private void openRepairRequestPage(String serviceName) {
-        Intent intent = new Intent(RepairRequest.this, RepairRequestActivity.class);
-        intent.putExtra("SERVICE_NAME", serviceName);
-        startActivity(intent);
+    private void setCardClickListener(int cardViewId, String repairType) {
+        CardView cardView = findViewById(cardViewId);
+        cardView.setOnClickListener(v -> {
+            // Navigate to RepairFormActivity and pass the repair type
+            Intent intent = new Intent(RepairRequest.this, RepairRequestActivity.class);
+            intent.putExtra("REPAIR_TYPE", repairType);
+            startActivity(intent);
+        });
     }
 }

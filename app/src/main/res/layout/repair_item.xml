@@ -1,0 +1,86 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:background="@drawable/repair_item_background">
+
+    <!-- Profile Image -->
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/profileImage"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/woman1"
+        android:scaleType="centerCrop"
+        android:layout_alignParentStart="true"
+        android:layout_marginEnd="16dp" />
+
+    <!-- Name -->
+    <TextView
+        android:id="@+id/listName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/profileImage"
+        android:text="Room No: 101"
+        android:textColor="@color/lavender"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <!-- Repair Type (Title) -->
+    <TextView
+        android:id="@+id/listTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/listName"
+        android:layout_toEndOf="@id/profileImage"
+        android:text="AC Repair"
+        android:textColor="@color/lavender"
+        android:textSize="16sp" />
+
+    <!-- Description -->
+    <TextView
+        android:id="@+id/listDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/listTitle"
+        android:layout_toEndOf="@id/profileImage"
+        android:text="AC not cooling"
+        android:textColor="@color/lavender"
+        android:textSize="14sp" />
+
+    <!-- Approve Button -->
+
+    <Button
+        android:id="@+id/listApproveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:text="Approve"
+        android:textSize="16sp"
+        android:backgroundTint="@color/lavender"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/listScheduleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:text="Schedule"
+        android:visibility="gone"
+        android:backgroundTint="@color/lavender"
+        android:textColor="@android:color/white" />
+
+    <!-- Done Button -->
+    <Button
+        android:id="@+id/listDoneButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/listApproveButton"
+        android:layout_alignParentEnd="true"
+        android:text="Done"
+        android:visibility="gone"
+        android:backgroundTint="@color/teal_700"
+        android:textColor="@android:color/white" />
+</RelativeLayout>
