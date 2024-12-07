@@ -75,8 +75,8 @@ public class LeaseTracking extends AppCompatActivity {
     private void fetchLeaseDataFromFirebase() {
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("leases");
 
-        // Order by end date to get the soonest expiring leases
-        databaseReference.orderByChild("endDate").limitToFirst(5).addValueEventListener(new ValueEventListener() {
+        // Order by end date to get the soonest expiring leases top(6)
+        databaseReference.orderByChild("endDate").limitToFirst(6).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 leaseList.clear(); // Clear existing data
