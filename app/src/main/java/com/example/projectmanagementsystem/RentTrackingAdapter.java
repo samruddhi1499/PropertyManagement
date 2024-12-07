@@ -33,7 +33,7 @@ public class RentTrackingAdapter extends RecyclerView.Adapter<RentTrackingAdapte
         RentItem item = rentItemList.get(position);
         holder.nameTextView.setText(item.getName());
         holder.roomTextView.setText(item.getRoom());
-        holder.imageView.setImageResource(item.getImageResId());
+        holder.imageView.setImageResource(item.getImageResId()); // Assuming the image resource id is stored in the model
         holder.approveButton.setText(item.isPaid() ? "Paid" : "Not Paid");
 
         // Optional: Set the button color to indicate payment status

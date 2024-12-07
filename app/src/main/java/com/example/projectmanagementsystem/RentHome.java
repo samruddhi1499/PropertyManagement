@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.view.View;
 import android.widget.Toast;
+import android.util.Log;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -47,12 +48,12 @@ public class RentHome extends AppCompatActivity {
             }
         });
 
-        // Retrieve rent items that are not paid from Firebase
+        // Fetch rent items from Firebase
         fetchRentItems();
     }
 
     private void fetchRentItems() {
-        rentItemsRef.orderByChild("paid").equalTo(false).addValueEventListener(new ValueEventListener() {
+        rentItemsRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 rentItems = new ArrayList<>();
@@ -61,13 +62,21 @@ public class RentHome extends AppCompatActivity {
                     rentItems.add(rentItem);
                 }
 
+                // Log the number of rent items fetched
+                Log.d("RentHome", "Fetched " + rentItems.size() + " rent items.");
+
                 // Update the RecyclerView with the fetched rent items
-                adapter = new RentTrackingAdapter(RentHome.this, rentItems);
-                recyclerView.setAdapter(adapter);
+                if (rentItems.size() > 0) {
+                    adapter = new RentTrackingAdapter(RentHome.this, rentItems);
+                    recyclerView.setAdapter(adapter);
+                } else {
+                    Toast.makeText(RentHome.this, "No rent items available", Toast.LENGTH_SHORT).show();
+                }
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
+                // Handle error if data retrieval fails
                 Toast.makeText(RentHome.this, "Failed to load data", Toast.LENGTH_SHORT).show();
             }
         });
