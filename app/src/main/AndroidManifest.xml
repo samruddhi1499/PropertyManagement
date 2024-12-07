@@ -27,11 +27,10 @@
         <activity android:name=".RentHome" android:exported="true" />
         <activity android:name=".AdminLandingPage" android:exported="false" />
 
-
         <!-- Add missing android:exported attributes -->
         <activity android:name=".RepairRequest" android:exported="false" />
         <activity android:name=".RepairRequestActivity" android:exported="false" />
-        <activity android:name=".RepairHome"  />
+        <activity android:name=".RepairHome" android:exported="false" />
         <activity android:name=".LeaseTracking" android:exported="false" />
 
         <!-- External activity with intent filter -->

@@ -11,13 +11,17 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class TenantLandingPage extends AppCompatActivity {
-
+    boolean isAdmin;
+    String emailUser, passwordUser;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tenant_landing_page);
         CardView payTenantRent = findViewById(R.id.tenantPayRent);
+        isAdmin = getIntent().getBooleanExtra("isAdmin", false);
 
+        emailUser = getIntent().getStringExtra("email");
+        passwordUser = getIntent().getStringExtra("password");
         // Set the OnClickListener
         payTenantRent.setOnClickListener(view -> {
             // Start RepairRequest activity
@@ -41,6 +45,14 @@ public class TenantLandingPage extends AppCompatActivity {
         tenantNotification.setOnClickListener(view -> {
             // Start RepairRequest activity
             Intent intent = new Intent(TenantLandingPage.this, Notification.class);
+            startActivity(intent);
+        });
+
+        CardView profile = findViewById(R.id.tenantProfile);
+        profile.setOnClickListener(view -> {
+            Intent intent = new Intent(TenantLandingPage.this, ProfileActivity.class);
+            intent.putExtra("email", emailUser);
+            intent.putExtra("password", passwordUser);
             startActivity(intent);
         });
 

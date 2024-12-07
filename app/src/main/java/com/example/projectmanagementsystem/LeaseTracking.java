@@ -2,64 +2,107 @@ package com.example.projectmanagementsystem;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.RelativeLayout;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ProgressBar;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class LeaseTracking extends AppCompatActivity {
+
+    private RecyclerView recyclerView;
+    private LeaseAdapter leaseAdapter;
+    private List<Lease> leaseList;
+    private ProgressBar progressBar; // ProgressBar for loading indicator
+    private Button goLeaseBackButton; // Go Back button
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.lease_tracking);
-        setupPersonClickListeners();
 
+        recyclerView = findViewById(R.id.recycler_view);
+        progressBar = findViewById(R.id.progressBar); // Initialize ProgressBar
+        leaseList = new ArrayList<>();
+        leaseAdapter = new LeaseAdapter(leaseList);
+
+        goLeaseBackButton = findViewById(R.id.goLeaseBackButton); // Initialize Go Back Button
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(leaseAdapter);
+
+        // Show the ProgressBar initially
+        progressBar.setVisibility(View.VISIBLE);
+
+        // Fetch lease data from Firebase
+        fetchLeaseDataFromFirebase();
+
+        // Set click listener for the Go Back Button
+        goLeaseBackButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Get the data from the intent
+                boolean isAdmin = getIntent().getBooleanExtra("isAdmin", false);
+                String emailUser = getIntent().getStringExtra("email");
+                String passwordUser = getIntent().getStringExtra("password");
+
+                // Create an Intent to go back to AdminLandingPage
+                Intent intent = new Intent(LeaseTracking.this, AdminLandingPage.class);
+                intent.putExtra("isAdmin", isAdmin);
+                intent.putExtra("email", emailUser);
+                intent.putExtra("password", passwordUser);
+
+                // Start AdminLandingPage activity
+                startActivity(intent);
+                finish(); // Finish the LeaseTracking activity
+            }
+        });
     }
 
-    private void setupPersonClickListeners() {
-        RelativeLayout person1 = findViewById(R.id.relativeLayout1);
-        RelativeLayout person2 = findViewById(R.id.relativeLayout2);
-        RelativeLayout person3 = findViewById(R.id.relativeLayout3);
-        RelativeLayout person4 = findViewById(R.id.relativeLayout4);
-        RelativeLayout person5 = findViewById(R.id.relativeLayout5);
+    private void fetchLeaseDataFromFirebase() {
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("leases");
 
-        person1.setOnClickListener(v -> openPersonDetail(
-                "John", "25", "1234567890", "Room 101", "john@example.com",
-                "2023-01-01", "2024-01-01", "1500", "500", "Paid", "No pets allowed"
-        ));
-        person2.setOnClickListener(v -> openPersonDetail(
-                "Jane", "30", "0987654321", "Room 102", "jane@example.com",
-                "2023-03-01", "2024-03-01", "1800", "600", "Pending", "Smoking prohibited"
-        ));
-        person3.setOnClickListener(v -> openPersonDetail(
-                "Alex", "28", "1122334455", "Room 103", "alex@example.com",
-                "2023-05-01", "2024-05-01", "1600", "550", "Paid", "Renewal possible"
-        ));
-        person4.setOnClickListener(v -> openPersonDetail(
-                "Emma", "22", "2233445566", "Room 104", "emma@example.com",
-                "2023-07-01", "2024-07-01", "1700", "500", "Pending", "Late fee applicable"
-        ));
-        person5.setOnClickListener(v -> openPersonDetail(
-                "Martha", "27", "3344556677", "Room 105", "martha@example.com",
-                "2023-09-01", "2024-09-01", "1900", "700", "Paid", "Lease cannot be sublet"
-        ));
+        // Order by end date to get the soonest expiring leases top(6)
+        databaseReference.orderByChild("endDate").limitToFirst(6).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                leaseList.clear(); // Clear existing data
+                for (DataSnapshot leaseSnapshot : snapshot.getChildren()) {
+                    Lease lease = leaseSnapshot.getValue(Lease.class);
+                    if (lease != null) {
+                        leaseList.add(lease); // Add new lease to list
+                    }
+                }
+
+                // Hide the ProgressBar after data is loaded
+                progressBar.setVisibility(View.GONE);
+
+                if (leaseList.isEmpty()) {
+                    Toast.makeText(LeaseTracking.this, "No leases found.", Toast.LENGTH_SHORT).show();
+                }
+
+                leaseAdapter.notifyDataSetChanged(); // Notify the adapter to update the UI
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                // Hide the ProgressBar if data fetching fails
+                progressBar.setVisibility(View.GONE);
+                Toast.makeText(LeaseTracking.this, "Failed to load data", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
-
-    private void openPersonDetail(String name, String age, String contact, String roomNo, String email,
-                                  String startDate, String endDate, String rentAmount, String deposit,
-                                  String paymentStatus, String specialConditions) {
-        Intent intent = new Intent(LeaseTracking.this, PersonDetailActivity.class);
-        intent.putExtra("name", name);
-        intent.putExtra("age", age);
-        intent.putExtra("contact", contact);
-        intent.putExtra("roomNo", roomNo);
-        intent.putExtra("email", email);
-        intent.putExtra("startDate", startDate);
-        intent.putExtra("endDate", endDate);
-        intent.putExtra("rentAmount", rentAmount);
-        intent.putExtra("deposit", deposit);
-        intent.putExtra("paymentStatus", paymentStatus);
-        intent.putExtra("specialConditions", specialConditions);
-        startActivity(intent);
-    }
-
 }
