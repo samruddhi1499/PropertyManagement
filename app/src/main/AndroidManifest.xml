@@ -14,6 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjectManagementSystem">
         <activity
+            android:name=".contactPage"
+            android:exported="false" />
+        <activity
             android:name=".uploadListing"
             android:exported="false" />
         <activity
