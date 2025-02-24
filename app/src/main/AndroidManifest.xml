@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
     <!-- Add Internet Permission for Firebase -->
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -14,39 +13,72 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjectManagementSystem">
-
-        <!-- Declare activities -->
-        <activity android:name=".AddNotification" android:exported="false" />
-        <activity android:name=".ProfileActivity" android:exported="false" />
-        <activity android:name=".AddTenant" android:exported="false" />
-        <activity android:name=".TenantDetails" android:exported="false" />
-        <activity android:name=".ListTenantByAdmin" android:exported="false" />
-        <activity android:name=".TenantPayment" android:exported="false" />
-        <activity android:name=".Notification" android:exported="false" />
-        <activity android:name=".TenantLandingPage" android:exported="false" />
-        <activity android:name=".RentHome" android:exported="true" />
-        <activity android:name=".AdminLandingPage" android:exported="false" />
-
-        <!-- Add missing android:exported attributes -->
-        <activity android:name=".RepairRequest" android:exported="false" />
-        <activity android:name=".RepairRequestActivity" android:exported="false" />
-        <activity android:name=".RepairHome" android:exported="false" />
-        <activity android:name=".LeaseTracking" android:exported="false" />
-
-        <!-- External activity with intent filter -->
-        <activity android:name=".PersonDetailActivity" android:exported="true">
+        <activity
+            android:name=".uploadListing"
+            android:exported="false" />
+        <activity
+            android:name=".PotentialTenantLandingPage"
+            android:exported="false" /> <!-- Declare activities -->
+        <activity
+            android:name=".AddNotification"
+            android:exported="false" />
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AddTenant"
+            android:exported="false" />
+        <activity
+            android:name=".TenantDetails"
+            android:exported="false" />
+        <activity
+            android:name=".ListTenantByAdmin"
+            android:exported="false" />
+        <activity
+            android:name=".TenantPayment"
+            android:exported="false" />
+        <activity
+            android:name=".Notification"
+            android:exported="false" />
+        <activity
+            android:name=".TenantLandingPage"
+            android:exported="false" />
+        <activity
+            android:name=".RentHome"
+            android:exported="true" />
+        <activity
+            android:name=".AdminLandingPage"
+            android:exported="false" /> <!-- Add missing android:exported attributes -->
+        <activity
+            android:name=".RepairRequest"
+            android:exported="false" />
+        <activity
+            android:name=".RepairRequestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RepairHome"
+            android:exported="false" />
+        <activity
+            android:name=".LeaseTracking"
+            android:exported="false" /> <!-- External activity with intent filter -->
+        <activity
+            android:name=".PersonDetailActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-        </activity>
-
-        <!-- Main Activity as Launcher -->
-        <activity android:name=".MainActivity" android:exported="true">
+        </activity> <!-- Main Activity as Launcher -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>
+
 </manifest>

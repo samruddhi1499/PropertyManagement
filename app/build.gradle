@@ -54,6 +54,9 @@ dependencies {
     testImplementation 'junit:junit:4.13.2' // For unit tests
     androidTestImplementation 'androidx.test.ext:junit:1.1.5' // For Android testing
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1' // For UI testing
+    implementation 'com.github.bumptech.glide:glide:4.14.2'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.14.2'
+    implementation 'com.makeramen:roundedimageview:2.3.0'
 }
 
 configurations.all {
