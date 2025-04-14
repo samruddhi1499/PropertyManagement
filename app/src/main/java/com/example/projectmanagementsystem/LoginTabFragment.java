@@ -84,6 +84,7 @@ public class LoginTabFragment extends Fragment {
 
                     if (passwordFromDB != null && passwordFromDB.equals(userPassword)) {
                         String emailFromDB = snapshot.child("email").getValue(String.class);
+                        Boolean isChecked = snapshot.child("checked").getValue(Boolean.class);
 
                         if ("admin@gmail.com".equals(emailFromDB)) {
                             Intent intent = new Intent(requireActivity(), AdminLandingPage.class);
@@ -92,7 +93,14 @@ public class LoginTabFragment extends Fragment {
                             intent.putExtra("email", userUsername);
                             intent.putExtra("password", userPassword);
                             startActivity(intent);
-                        } else {
+                        }else if(isChecked){
+                            isAdmin = false;
+                            Intent intent = new Intent(requireActivity(), PotentialTenantLandingPage.class);
+                            intent.putExtra("email", userUsername);
+                            intent.putExtra("password", userPassword);
+                            startActivity(intent);
+                        }
+                        else {
                             isAdmin = false;
                             Intent intent = new Intent(requireActivity(), TenantLandingPage.class);
                             intent.putExtra("email", userUsername);

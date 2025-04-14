@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:padding="20dp">
 
             <TextView
@@ -30,7 +30,6 @@
                 android:textStyle="bold"
                 android:layout_marginTop="15dp"
                 android:textColor="@color/lavender"
-
                 android:padding="8dp"/>
 
             <ImageView
@@ -38,13 +37,12 @@
                 android:layout_height="150dp"
                 android:src="@drawable/signimg"/>
 
-
             <EditText
                 android:layout_width="300dp"
-                android:layout_height="60dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:id="@+id/signup_email"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="10dp"
                 android:padding="8dp"
                 android:hint="Email"
                 android:drawableLeft="@drawable/baseline_email_24"
@@ -53,7 +51,7 @@
 
             <EditText
                 android:layout_width="300dp"
-                android:layout_height="60dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:id="@+id/signup_password"
                 android:layout_marginTop="20dp"
@@ -66,7 +64,7 @@
 
             <EditText
                 android:layout_width="300dp"
-                android:layout_height="60dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:id="@+id/signup_confirm"
                 android:layout_marginTop="20dp"
@@ -74,21 +72,29 @@
                 android:hint="Confirm Password"
                 android:inputType="textPassword"
                 android:drawableLeft="@drawable/baseline_password_24"
-                android:drawablePadding="8dp"
+                android:drawablePadding="4dp"
                 android:background="@drawable/edittext_bkg"/>
+
+            <CheckBox
+                android:id="@+id/checkbox_potential_tenant"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="I am a potential tenant"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
 
             <Button
                 android:layout_width="300dp"
-                android:layout_height="70dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="10dp"
                 android:id="@+id/signup_button"
                 android:textSize="18sp"
                 android:text="Signup"
-                app:cornerRadius = "30dp"/>
+                app:cornerRadius="30dp"/>
 
         </LinearLayout>
-
     </LinearLayout>
-
 </LinearLayout>

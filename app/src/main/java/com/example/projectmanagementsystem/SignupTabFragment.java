@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -18,6 +19,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class SignupTabFragment extends Fragment {
 
     EditText signupEmail, signupPassword, confirmSignupPassword;
+    CheckBox potential;
     Button signupButton;
     FirebaseDatabase database;
     DatabaseReference reference;
@@ -30,6 +32,7 @@ public class SignupTabFragment extends Fragment {
         signupEmail = view.findViewById(R.id.signup_email);
         signupPassword = view.findViewById(R.id.signup_password);
         confirmSignupPassword = view.findViewById(R.id.signup_confirm);
+        potential = view.findViewById(R.id.checkbox_potential_tenant);
         signupButton = view.findViewById(R.id.signup_button);
 
         signupButton.setOnClickListener(v -> {
@@ -39,6 +42,7 @@ public class SignupTabFragment extends Fragment {
             String email = signupEmail.getText().toString().trim();
             String password = signupPassword.getText().toString().trim();
             String confirmPassword = confirmSignupPassword.getText().toString().trim();
+            Boolean potentialTenant = potential.isChecked();
 
             if (email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
                 Toast.makeText(requireContext(), "Please fill in all fields", Toast.LENGTH_SHORT).show();
@@ -46,7 +50,7 @@ public class SignupTabFragment extends Fragment {
                 Toast.makeText(requireContext(), "Passwords do not match", Toast.LENGTH_SHORT).show();
             } else {
                 String sanitizedEmail = email.replace(".", ","); // Sanitize email for Firebase key
-                FirebaseHelper helperClass = new FirebaseHelper(email, password);
+                FirebaseHelper helperClass = new FirebaseHelper(email, password, potentialTenant);
 
                 reference.child(sanitizedEmail).setValue(helperClass).addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {

@@ -29,6 +29,7 @@ public class AdminLandingPage extends AppCompatActivity {
         CardView notificationCard = findViewById(R.id.notificationAdminCard);
         CardView tenantList = findViewById(R.id.tenantCard);
         CardView profile = findViewById(R.id.profileCard);
+        CardView listing = findViewById(R.id.listingsCard);
         CardView expense = findViewById(R.id.expenseCard);
 
         // Set onClickListeners for each CardView
@@ -76,6 +77,13 @@ public class AdminLandingPage extends AppCompatActivity {
         expense.setOnClickListener(view -> {
             // Navigate to ExpenseActivity
             Intent intent = new Intent(AdminLandingPage.this, ExpenseList.class);
+            startActivity(intent);
+        });
+
+        listing.setOnClickListener(view -> {
+            // Navigate to ExpenseActivity
+            Intent intent = new Intent(AdminLandingPage.this, Listings.class);
+            intent.putExtra("isAdmin", isAdmin);
             startActivity(intent);
         });
     }
