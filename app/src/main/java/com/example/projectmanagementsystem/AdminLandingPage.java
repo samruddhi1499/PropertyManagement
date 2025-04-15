@@ -31,6 +31,8 @@ public class AdminLandingPage extends AppCompatActivity {
         CardView profile = findViewById(R.id.profileCard);
         CardView listing = findViewById(R.id.listingsCard);
         CardView expense = findViewById(R.id.expenseCard);
+        CardView report = findViewById(R.id.reportCard);
+
 
         // Set onClickListeners for each CardView
         leaseCard.setOnClickListener(view -> {
@@ -75,6 +77,12 @@ public class AdminLandingPage extends AppCompatActivity {
             startActivity(intent);
         });
         expense.setOnClickListener(view -> {
+            // Navigate to ExpenseActivity
+            Intent intent = new Intent(AdminLandingPage.this, ExpenseActivity.class);
+            startActivity(intent);
+        });
+
+        report.setOnClickListener(view -> {
             // Navigate to ExpenseActivity
             Intent intent = new Intent(AdminLandingPage.this, ExpenseList.class);
             startActivity(intent);
