@@ -84,7 +84,7 @@ public class AdminLandingPage extends AppCompatActivity {
 
         report.setOnClickListener(view -> {
             // Navigate to ExpenseActivity
-            Intent intent = new Intent(AdminLandingPage.this, ExpenseList.class);
+            Intent intent = new Intent(AdminLandingPage.this, ToDoActivity.class);
             startActivity(intent);
         });
 
