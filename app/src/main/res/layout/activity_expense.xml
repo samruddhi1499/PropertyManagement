@@ -76,15 +76,7 @@
                     android:padding="8dp"
                     android:textColor="@color/black" />
 
-                <Button
-                    android:id="@+id/uploadReceiptButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="20dp"
-                    android:backgroundTint="@color/lavender"
-                    android:text="Upload Receipt"
-                    android:textSize="18sp"
-                    app:cornerRadius="20dp" />
+               
 
                 <Button
                     android:id="@+id/saveExpenseButton"

@@ -78,7 +78,7 @@ public class AdminLandingPage extends AppCompatActivity {
         });
         expense.setOnClickListener(view -> {
             // Navigate to ExpenseActivity
-            Intent intent = new Intent(AdminLandingPage.this, ExpenseActivity.class);
+            Intent intent = new Intent(AdminLandingPage.this, ExpenseListActivity.class);
             startActivity(intent);
         });
 

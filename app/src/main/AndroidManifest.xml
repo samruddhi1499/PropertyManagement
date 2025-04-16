@@ -13,6 +13,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjectManagementSystem">
+
+        <activity
+            android:name=".ExpenseListActivity"
+            android:exported="false"/>
+
+
         <activity
             android:name=".ExpenseActivity"
             android:exported="false" />
