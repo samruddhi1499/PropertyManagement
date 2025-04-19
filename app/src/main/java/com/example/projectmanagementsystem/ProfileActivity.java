@@ -4,6 +4,8 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 
@@ -11,6 +13,7 @@ import android.widget.TextView;
 public class ProfileActivity extends AppCompatActivity {
 
     TextView profileEmail, profilePassword;
+    Button logout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +25,14 @@ public class ProfileActivity extends AppCompatActivity {
 
         showAllUserData();
 
+        logout = findViewById(R.id.logout);
+        logout.setOnClickListener(view -> {
+            // Navigate to Notification Activity and pass the isAdmin flag
+
+            Intent intent = new Intent(ProfileActivity.this, MainActivity.class);
+            startActivity(intent);
+        });
+
     }
 
     public void showAllUserData(){
@@ -32,5 +43,7 @@ public class ProfileActivity extends AppCompatActivity {
         profileEmail.setText(emailUser);
         profilePassword.setText(passwordUser);
     }
+
+
 
 }

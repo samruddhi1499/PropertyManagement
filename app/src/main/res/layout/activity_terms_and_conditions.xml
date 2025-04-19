@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".TermsAndConditionsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center_horizontal">
+
+        <!-- Heading -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Terms &amp; Conditions"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="@color/lavender"
+            android:layout_marginBottom="20dp"
+            android:letterSpacing="0.05" />
+
+        <!-- Card-like styled container for T&C text -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:background="@drawable/rounded_container"
+            android:elevation="2dp">
+
+            <TextView
+                android:id="@+id/terms_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                android:lineSpacingExtra="6dp"
+                android:textAlignment="viewStart"
+                android:text="1. Rent must be paid on or before the due date.\n\n
+2. Illegal activities are strictly prohibited.\n\n
+3. Quiet hours are from 10 PM to 7 AM.\n\n
+4. Pets are not allowed without prior written permission.\n\n
+5. Tenants must keep their unit clean and undamaged.\n\n
+6. Guests staying over 7 days must be reported.\n\n
+7. Report damage in common areas immediately.\n\n
+8. Smoking is not allowed indoors.\n\n
+9. Respect neighbors and follow building policies.\n\n
+10. Violations may result in lease termination." />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

@@ -123,6 +123,8 @@ public class uploadListing extends AppCompatActivity {
                                         progressBar.setVisibility(View.INVISIBLE);
                                         Toast.makeText(uploadListing.this, "Uploaded", Toast.LENGTH_SHORT).show();
                                         Intent intent = new Intent(uploadListing.this, Listings.class);
+                                        Boolean isAdmin = true;
+                                        intent.putExtra("isAdmin", isAdmin);
                                         startActivity(intent);
                                         finish();
                                     })

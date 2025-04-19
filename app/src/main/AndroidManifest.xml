@@ -13,15 +13,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjectManagementSystem">
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".TermsAndConditionsActivity"
+            android:exported="false" />
         <activity
             android:name=".ExpenseListActivity"
-            android:exported="false"/>
-
+            android:exported="false" />
         <activity
             android:name=".ToDoActivity"
             android:exported="false" />
-
         <activity
             android:name=".ExpenseActivity"
             android:exported="false" />
@@ -96,13 +105,8 @@
         </activity> <!-- Main Activity as Launcher -->
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:exported="true" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>

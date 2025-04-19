@@ -87,6 +87,8 @@ public class LoginTabFragment extends Fragment {
                         Boolean isChecked = snapshot.child("checked").getValue(Boolean.class);
 
                         if ("admin@gmail.com".equals(emailFromDB)) {
+                            loginUsername.setText("");
+                            loginPassword.setText("");
                             Intent intent = new Intent(requireActivity(), AdminLandingPage.class);
                             isAdmin = true;
                             intent.putExtra("isAdmin", isAdmin);
@@ -94,6 +96,8 @@ public class LoginTabFragment extends Fragment {
                             intent.putExtra("password", userPassword);
                             startActivity(intent);
                         }else if(isChecked){
+                            loginUsername.setText("");
+                            loginPassword.setText("");
                             isAdmin = false;
                             Intent intent = new Intent(requireActivity(), PotentialTenantLandingPage.class);
                             intent.putExtra("email", userUsername);
@@ -101,6 +105,8 @@ public class LoginTabFragment extends Fragment {
                             startActivity(intent);
                         }
                         else {
+                            loginUsername.setText("");
+                            loginPassword.setText("");
                             isAdmin = false;
                             Intent intent = new Intent(requireActivity(), TenantLandingPage.class);
                             intent.putExtra("email", userUsername);
@@ -112,6 +118,8 @@ public class LoginTabFragment extends Fragment {
                         loginPassword.setError("Invalid Credentials");
                         loginPassword.requestFocus();
                     }
+
+
                 } else {
                     loginUsername.setError("User does not exist");
                     loginUsername.requestFocus();

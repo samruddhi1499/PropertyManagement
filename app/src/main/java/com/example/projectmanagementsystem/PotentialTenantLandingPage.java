@@ -58,7 +58,7 @@ public class PotentialTenantLandingPage extends AppCompatActivity {
 
         settingsCard.setOnClickListener(view -> {
             // Navigate to RentHome Activity
-            Intent intent = new Intent(PotentialTenantLandingPage.this, RentHome.class);
+            Intent intent = new Intent(PotentialTenantLandingPage.this, TermsAndConditionsActivity.class);
             startActivity(intent);
         });
 
